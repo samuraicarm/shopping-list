@@ -8,8 +8,9 @@ function watchForm() {
     console.log("I get called after the form is submitted.");
     event.preventDefault();
     let storeItem = $('#shopping-list-entry').val();
-    console.log(storeItem)
     addItem(storeItem);
+    $('#js-shopping-list-form')[0].reset();
+    console.log(storeItem)
     });
    }
 
@@ -38,8 +39,8 @@ $(function() {
 
 //toggle check
 $(function() {
-    $('.shopping-list').on('click','.shopping-item-toggle', function(event){
-        $(event.target).closest('li').toggleClass('shopping-item__checked');
+    $('.shopping-list').on ('click', '.shopping-item-toggle', function(event){
+        $(this).closest('li','.shopping-item').toggleClass('shopping-item__checked');
       });
   }); 
   
